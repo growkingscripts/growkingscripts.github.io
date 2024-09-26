@@ -7,35 +7,29 @@
 </head>
 <body>
 
-    <!-- Div untuk Header -->
+    <!-- Tempat header akan dimuat -->
     <div id="header"></div>
 
-    <!-- Konten Utama -->
     <main>
         <h1>Welcome to My Website</h1>
-        <p>This is the content of the index page.</p>
+        <p>This is the content of the homepage.</p>
     </main>
 
-    <!-- Div untuk Footer -->
+    <!-- Tempat footer akan dimuat -->
     <div id="footer"></div>
 
-    <!-- Script untuk menyertakan header dan footer -->
     <script>
-        // Load header.html
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading header:', error));
+        // Fungsi untuk memuat file HTML eksternal
+        function loadHTML(elementId, fileName) {
+            fetch(fileName)
+                .then(response => response.text())
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(err => console.error('Error loading file:', err));
+        }
 
-        // Load footer.html
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
+        // Memuat header dan footer
+        loadHTML("header", "header.html");
+        loadHTML("footer", "footer.html");
     </script>
 
 </body>
