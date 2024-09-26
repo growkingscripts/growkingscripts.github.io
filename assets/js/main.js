@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const floatingBox2 = document.getElementById('floatingBox2');
     const about_2 = document.querySelector('.about_2');
     const floatingBox3 = document.getElementById('floatingBox3');
-	const about_3 = document.querySelector('.about_3');
-	const floatingBox4 = document.getElementById('floatingBox4');
-	const about_4 = document.querySelector('.about_4');
+    const about_3 = document.querySelector('.about_3');
+    const floatingBox4 = document.getElementById('floatingBox4');
+    const about_4 = document.querySelector('.about_4');
     const closeBtn = document.querySelector('.row .col-lg-6');
     let isFloatingBox1Visible = false;
     let isFloatingBox2Visible = false;
@@ -138,19 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-fetch('https://raw.githubusercontent.com/growkingscripts/growkingscripts.github.io/refs/heads/main/assets/json/resellers.json')
-    .then(response => response.json())
-    .then(data => {
-		const resellerList = document.getElementById('resellerList');
-
-		data.datas.forEach(reseller => {
-			let div = document.createElement("div");
-			div.classList.add("numbered-item");
-			div.innerHTML = 'Username [Discord ID]: ' + reseller.username + ' [' + reseller.userid + ']';
-			resellerList.appendChild(div);
-		});
-	});	
 
 (function() {
   "use strict";
