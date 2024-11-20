@@ -910,6 +910,17 @@ section {
   padding-right: 20px;
 }
 
+.inner-page-information ul {
+  padding: 10px 0;
+  background-color: green;
+  color: white;
+  width: 70%;
+  margin-left: 2em;
+  padding-left: 20px;
+  padding-right: 20px;
+  list-style-type: none;
+}
+
 .inner-page .container .numbered-item::before {
   content: counter(list-counter) ". ";
   display: block;
